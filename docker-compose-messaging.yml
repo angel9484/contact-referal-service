@@ -1,0 +1,21 @@
+version: '3'
+services:
+  zookeeper:
+    image: "wurstmeister/zookeeper"
+    networks:
+      - messaging
+  kafka:
+    image: "wurstmeister/kafka"
+    depends_on:
+      - zookeeper
+    networks:
+      - messaging
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 10.0.75.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_HEAP_OPTS: "-Xmx256M -Xms128M"
+      KAFKA_JVM_PERFORMANCE_OPTS: " -Xmx256m -Xms256m"
+networks:
+  messaging:

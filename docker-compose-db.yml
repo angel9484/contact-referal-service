@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    image: "mysql:8.0.23"
+    networks:
+      - db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "contact-referal-user"
+      MYSQL_USER: "contact-referal-user"
+      MYSQL_PASSWORD: "contact-referal-user"
+networks:
+  db:

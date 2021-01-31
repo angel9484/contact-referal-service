@@ -1,0 +1,29 @@
+version: '3'
+services:
+  contact-referal-user-service:
+    build:
+      dockerfile: user.Dockerfile
+      context: .
+    ports:
+      - "8081:8080"
+    restart: always
+    environment:
+      MICRONAUT_ENVIRONMENTS: "docker"
+    networks:
+      - db
+      - user_backend
+  mysql:
+    image: "mysql:8.0.23"
+    networks:
+      - db
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "contact-referal-user"
+      MYSQL_USER: "contact-referal-user"
+      MYSQL_PASSWORD: "contact-referal-user"
+networks:
+  db:
+  user_backend:

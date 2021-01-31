@@ -1,0 +1,2 @@
+rootProject.name = "contact-referal-service"
+include 'contact-referal-user-service'
