@@ -3,6 +3,8 @@ package es.bnext.api.service;
 import com.google.common.collect.Lists;
 import es.bnext.api.client.ContactClient;
 import es.bnext.api.dto.contact.UserContactsDTO;
+import es.bnext.api.dto.contact.UserContactsRequestDTO;
+import es.bnext.api.dto.contact.UserContactsResponseDTO;
 import es.bnext.api.dto.contact.UserContactsSearchDTO;
 import es.bnext.api.dto.user.UserDTO;
 import es.bnext.api.dto.user.UserPhonesSearchDTO;
@@ -19,11 +21,11 @@ public class ContactService {
     private final ContactClient contactClient;
     private final UserService userService;
 
-    public UserContactsDTO saveContacts(UserContactsDTO userContactsDTO) {
-        List<UserDTO> users = userService.findByPhones(new UserPhonesSearchDTO(Lists.newArrayList(userContactsDTO.getPhone())));
-        userContactsDTO.setUserDTO(users.get(0));
-        contactClient.createOrUpdateContacts(userContactsDTO);
-        return userContactsDTO;
+    public UserContactsResponseDTO saveContacts(@Valid UserContactsRequestDTO userContactsRequestDTO) {
+        List<UserDTO> users = userService.findByPhones(new UserPhonesSearchDTO(Lists.newArrayList(userContactsRequestDTO.getPhone())));
+        UserContactsDTO userContactsToService = new UserContactsDTO(users.get(0).getId(), userContactsRequestDTO.getContacts());
+        UserContactsDTO updatedContacts = contactClient.createOrUpdateContacts(userContactsToService);
+        return new UserContactsResponseDTO(users.get(0), updatedContacts.getContacts());
     }
 
     public List<UserContactsDTO> findContactsByUserId(@Valid UserPhonesSearchDTO userContactsSearchDTO) {

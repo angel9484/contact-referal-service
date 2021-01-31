@@ -10,10 +10,10 @@ import java.util.List;
 
 @Data
 @Introspected
-@Schema(name = "UserHelperContacts", description = "Details of the user to be registered.")
+@Schema(name = "UserHelperContactsRequest", description = "Details of the user to be registered.")
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserContactsDTO {
-    private int userId;
+public class UserContactsRequestDTO {
+    private String phone;
     private List<ContactDTO> contacts;
 }

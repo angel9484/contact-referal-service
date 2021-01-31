@@ -52,7 +52,7 @@ public class UserController {
     @ApiResponse(responseCode = "200", description = "User created",
                  content = @Content(mediaType = MediaType.APPLICATION_JSON,
                                     schema = @Schema(implementation = UserDTO.class)))
-    @ApiResponse(responseCode = "400", description = "No user id's present",
+    @ApiResponse(responseCode = "400", description = "The data provided are not correct",
                  content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(implementation = ErrorDTO.class)))
     @ApiResponse(responseCode = "500", description = "The size of the list returned is not the same than the size of the users requested.",
                  content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(implementation = ErrorDTO.class)))

@@ -1,6 +1,8 @@
 package es.bnext.api.ws;
 
 import es.bnext.api.dto.contact.UserContactsDTO;
+import es.bnext.api.dto.contact.UserContactsRequestDTO;
+import es.bnext.api.dto.contact.UserContactsResponseDTO;
 import es.bnext.api.dto.user.UserPhonesSearchDTO;
 import es.bnext.api.error.ErrorDTO;
 import es.bnext.api.service.ContactService;
@@ -48,10 +50,10 @@ public class ContactController {
                description = "Create or update contacts for an user. This will delete all non existent contacts here.")
     @ApiResponse(responseCode = "200", description = "Contact created",
                  content = @Content(mediaType = MediaType.APPLICATION_JSON,
-                                    schema = @Schema(implementation = UserContactsDTO.class)))
+                                    schema = @Schema(implementation = UserContactsResponseDTO.class)))
     @Tag(name = "contacts")
     @Post(produces = MediaType.APPLICATION_JSON, value = "/createOrUpdateContacts")
-    public UserContactsDTO create(@Valid @Body UserContactsDTO userContactsDTO) {
+    public UserContactsResponseDTO create(@Valid @Body UserContactsRequestDTO userContactsDTO) {
         return contactService.saveContacts(userContactsDTO);
     }
 }
