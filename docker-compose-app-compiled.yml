@@ -12,6 +12,18 @@ services:
     networks:
       - db
       - user_backend
+  contact-referal-contact-service:
+    build:
+      dockerfile: contact.fast.Dockerfile
+      context: contact-referal-contact-service/
+    ports:
+      - "8082:8080"
+    restart: always
+    environment:
+      MICRONAUT_ENVIRONMENTS: "docker"
+    networks:
+      - dbcontact
+      - contact_backend
   mysql:
     image: "mysql:8.0.23"
     networks:
@@ -24,6 +36,20 @@ services:
       MYSQL_DATABASE: "contact-referal-user"
       MYSQL_USER: "contact-referal-user"
       MYSQL_PASSWORD: "contact-referal-user"
+  dbcontact:
+    image: "mysql:8.0.23"
+    networks:
+      - dbcontact
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "contact-referal-contact"
+      MYSQL_USER: "contact-referal-contact"
+      MYSQL_PASSWORD: "contact-referal-contact"
 networks:
   db:
   user_backend:
+  dbcontact:
+  contact_backend:

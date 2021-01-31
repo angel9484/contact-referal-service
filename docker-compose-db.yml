@@ -11,5 +11,18 @@ services:
       MYSQL_DATABASE: "contact-referal-user"
       MYSQL_USER: "contact-referal-user"
       MYSQL_PASSWORD: "contact-referal-user"
+  dbcontact:
+    image: "mysql:8.0.23"
+    networks:
+      - dbcontact
+    ports:
+      - "3307:3306"
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: "contact-referal-contact"
+      MYSQL_USER: "contact-referal-contact"
+      MYSQL_PASSWORD: "contact-referal-contact"
 networks:
   db:
+  dbcontact:

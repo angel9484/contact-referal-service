@@ -1,0 +1,6 @@
+applicationType: default
+defaultPackage: es.bnext
+testFramework: junit
+sourceLanguage: java
+buildTool: gradle
+features: [ annotation-api, app-name, gradle, http-client, java, java-application, jdbc-hikari, junit, lombok, management, micrometer, micrometer-jmx, micrometer-statsd, mysql, netflix-hystrix, readme, shade, slf4j-simple, testcontainers, netty-server, tracing-jaeger, yaml ]

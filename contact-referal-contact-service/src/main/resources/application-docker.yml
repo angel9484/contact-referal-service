@@ -1,0 +1,6 @@
+micronaut:
+  server:
+    port: 8080
+datasources:
+  default:
+    url: jdbc:mysql://mysqlcontact:3306/contact-referal-contact
