@@ -1,7 +1,7 @@
-package es.bnext.api.service;
+package es.bnext.contact.service;
 
-import es.bnext.api.entity.Contact;
 import es.bnext.contact.dto.ContactDTO;
+import es.bnext.contact.entity.Contact;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

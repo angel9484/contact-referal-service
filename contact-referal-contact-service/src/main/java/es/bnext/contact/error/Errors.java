@@ -1,4 +1,4 @@
-package es.bnext.api.error;
+package es.bnext.contact.error;
 
 public enum Errors {
     DUPLICATED_ENTITY,

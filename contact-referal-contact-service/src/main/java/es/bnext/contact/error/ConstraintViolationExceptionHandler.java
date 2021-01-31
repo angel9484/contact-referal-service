@@ -1,4 +1,4 @@
-package es.bnext.api.error;
+package es.bnext.contact.error;
 
 import io.micronaut.context.annotation.Primary;
 import io.micronaut.context.annotation.Requires;

@@ -17,7 +17,7 @@ services:
       dockerfile: user.fast.Dockerfile
       context: contact-referal-user-service/
     ports:
-      - "8081:8080"
+      - "8080:8080"
     restart: always
     environment:
       MICRONAUT_ENVIRONMENTS: "docker"
@@ -29,7 +29,7 @@ services:
       dockerfile: contact.fast.Dockerfile
       context: contact-referal-contact-service/
     ports:
-      - "8082:8080"
+      - "8081:8080"
     restart: always
     environment:
       MICRONAUT_ENVIRONMENTS: "docker"
@@ -48,7 +48,7 @@ services:
       MYSQL_DATABASE: "contact-referal-user"
       MYSQL_USER: "contact-referal-user"
       MYSQL_PASSWORD: "contact-referal-user"
-  dbcontact:
+  mysqlcontact:
     image: "mysql:8.0.23"
     networks:
       - dbcontact

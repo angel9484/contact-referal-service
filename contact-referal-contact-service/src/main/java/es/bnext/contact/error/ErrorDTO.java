@@ -1,4 +1,4 @@
-package es.bnext.api.error;
+package es.bnext.contact.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

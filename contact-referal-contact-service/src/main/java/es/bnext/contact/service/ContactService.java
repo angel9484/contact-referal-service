@@ -1,10 +1,10 @@
-package es.bnext.api.service;
+package es.bnext.contact.service;
 
 import com.google.common.collect.Lists;
-import es.bnext.api.entity.Contact;
 import es.bnext.contact.dto.ContactDTO;
 import es.bnext.contact.dto.UserContactsDTO;
 import es.bnext.contact.dto.UserContactsSearchDTO;
+import es.bnext.contact.entity.Contact;
 import lombok.RequiredArgsConstructor;
 import org.mapstruct.factory.Mappers;
 

@@ -17,7 +17,7 @@ services:
       dockerfile: user.Dockerfile
       context: .
     ports:
-      - "8081:8080"
+      - "8080:8080"
     restart: always
     environment:
       MICRONAUT_ENVIRONMENTS: "docker"
@@ -29,7 +29,7 @@ services:
       dockerfile: contact.Dockerfile
       context: .
     ports:
-      - "8082:8080"
+      - "8081:8080"
     restart: always
     environment:
       MICRONAUT_ENVIRONMENTS: "docker"

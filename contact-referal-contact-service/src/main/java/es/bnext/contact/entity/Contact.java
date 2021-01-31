@@ -1,4 +1,4 @@
-package es.bnext.api.entity;
+package es.bnext.contact.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

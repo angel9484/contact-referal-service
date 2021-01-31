@@ -1,7 +1,7 @@
-package es.bnext.api.service;
+package es.bnext.contact.service;
 
 
-import es.bnext.api.entity.Contact;
+import es.bnext.contact.entity.Contact;
 import io.micronaut.transaction.annotation.ReadOnly;
 import lombok.RequiredArgsConstructor;
 

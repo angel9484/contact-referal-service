@@ -1,9 +1,9 @@
-package es.bnext.api.ws;
+package es.bnext.contact.ws;
 
-import es.bnext.api.error.ErrorDTO;
-import es.bnext.api.service.ContactService;
 import es.bnext.contact.dto.UserContactsDTO;
 import es.bnext.contact.dto.UserContactsSearchDTO;
+import es.bnext.contact.error.ErrorDTO;
+import es.bnext.contact.service.ContactService;
 import io.micronaut.core.version.annotation.Version;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Body;

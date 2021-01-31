@@ -1,5 +1,6 @@
 package es.bnext.user.dto;
 
+import es.bnext.user.validation.PhoneValidation;
 import io.micronaut.core.annotation.Introspected;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
@@ -23,5 +24,6 @@ public class UserCreationDTO {
     private String lastName;
     @NotNull
     @NotBlank
+    @PhoneValidation
     private String phone;
 }

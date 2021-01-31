@@ -1,6 +1,6 @@
-package es.bnext.api.service;
+package es.bnext.contact.service;
 
-import es.bnext.api.entity.Contact;
+import es.bnext.contact.entity.Contact;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package es.bnext.api.error;
+package es.bnext.contact.error;
 
 import io.micronaut.http.HttpStatus;
 import lombok.AllArgsConstructor;
