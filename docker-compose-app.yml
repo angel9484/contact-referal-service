@@ -1,5 +1,17 @@
 version: '3'
 services:
+  contact-referal-api:
+    build:
+      dockerfile: api.Dockerfile
+      context: .
+    ports:
+      - "8082:8080"
+    restart: always
+    environment:
+      MICRONAUT_ENVIRONMENTS: "docker"
+    networks:
+      - contact_backend
+      - user_backend
   contact-referal-user-service:
     build:
       dockerfile: user.Dockerfile

@@ -1,0 +1,8 @@
+micronaut:
+  server:
+    port: 8080
+client:
+  user:
+    url: http://contact-referal-user-service:8080
+  contact:
+    url: http://contact-referal-contact-service:8081

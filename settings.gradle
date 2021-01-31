@@ -1,3 +1,4 @@
 rootProject.name = "contact-referal-service"
 include 'contact-referal-user-service'
 include 'contact-referal-contact-service'
+include 'contact-referal-api'
